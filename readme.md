@@ -33,11 +33,6 @@ sudo python ./readerEmulatorClient/readerClient.py --readerPath=/dev/ttyACM0 --f
 ```python
 from readerEmulatorClient import readerClient
 from readerEmulatorClient import readerSerialConnection
-```
-
-```python
-from readerEmulatorClient import readerClient
-from readerEmulatorClient import readerSerialConnection
 
 c = readerSerialConnection.Connection()
 c.connect(addr)
