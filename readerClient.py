@@ -82,7 +82,6 @@ class ReaderEmulator:
             line2 = line.rstrip('\n')
             pageBytes = bytearray()
             for i in range(1, 8, 2):
-                print line2[i - 1:i + 1]
                 pageBytes.append(int("0x" + line2[i - 1:i + 1], 16))
                 pageByteIndex += 1
             self.writeAndVerify(pageIndex, pageBytes)
