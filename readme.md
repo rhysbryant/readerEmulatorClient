@@ -1,6 +1,6 @@
-#Client utility for PN512 NFC Tag Reader/Writer Emulator
+# Client utility for PN512 NFC Tag Reader/Writer Emulator
 
-##Usage
+## Usage
 
 To read all pages on the tag and write them to a file
 
@@ -21,6 +21,12 @@ Where addr is the com port number on your windows based system. check serial por
 **raspberry pi**
 
 addr will be the CDC serial device path /dev/ttyACMx where x will be a number likely 0
+
+for example
+```shell
+git clone https://github.com/rhysbryant/readerEmulatorClient/
+sudo python ./readerEmulatorClient/readerClient.py --readerPath=/dev/ttyACM0 --file=dump.txt --cmd readFromFile
+```
 
 ## Using in your project
 
