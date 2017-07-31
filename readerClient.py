@@ -90,8 +90,8 @@ class ReaderEmulator:
 
     def writePagesToFile(self, filename):
         """reads all the pages from the tag and writes them to the given file"""
-        self.disableTag();
-		fl = open(filename, 'wb')
+        self.disableTag()
+        fl = open(filename, 'wb')
         for page in range(0, 45, self.TAG_PAGE_SIZE):
             data = self.readPages(page)
 
@@ -106,7 +106,7 @@ class ReaderEmulator:
                     fl.write('\n')
                 fl.write(format(data[b], '02x'))
         fl.close()
-		self.enableTag();
+        self.enableTag()
 
     def disableTag(self):
         """disables the tag, the emulated reader will flush the buffer and won't process tag commands"""
