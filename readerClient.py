@@ -110,12 +110,14 @@ class ReaderEmulator:
 
     def disableTag(self):
         """disables the tag, the emulated reader will flush the buffer and won't process tag commands"""
-        header = {self.READER_CMD_DISABLE_TAG}
+        header=bytearray()
+        header.append(self.READER_CMD_DISABLE_TAG)
         self._conn.write(header)
 
     def enableTag(self):
         """enables the tag, emulated will response to commands sent by the reader"""
-        header = {self.READER_CMD_ENABLE_TAG}
+        header = bytearray()
+        header.append(self.READER_CMD_ENABLE_TAG)
         self._conn.write(header)
 
     @property
