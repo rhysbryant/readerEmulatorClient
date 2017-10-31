@@ -21,6 +21,7 @@ __author__ = 'rhys'
 '''
 import readerSerialConnection
 import argparse
+import time
 import sys
 class ReaderEmulator:
     TAG_CMD = 64
@@ -84,6 +85,8 @@ class ReaderEmulator:
             for i in range(1, 8, 2):
                 pageBytes.append(int("0x" + line2[i - 1:i + 1], 16))
                 pageByteIndex += 1
+            if pageIndex > 0:
+                time.sleep(.030)
             self.writeAndVerify(pageIndex, pageBytes)
             pageIndex += 1
         fl.close()
